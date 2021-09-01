@@ -1,7 +1,7 @@
 variable "name" {
   description = "Desired name for the IAM user"
   type        = string
-  default     = "user3"
+  default     = "user4"
 }
 variable "region" {
   description = "Default region for AWS"
