@@ -33,54 +33,14 @@ variable "custom_group_policy_arns" {
 variable "custom_group_policies" {
   description = "List of maps of inline IAM policies to attach to IAM group. Should have `name` and `policy` keys in each element."
   type        = list(map(string))
-  default     = {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Action": "ec2:*",
-            "Effect": "Allow",
-            "Resource": "*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": "elasticloadbalancing:*",
-            "Resource": "*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": "cloudwatch:*",
-            "Resource": "*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": "autoscaling:*",
-            "Resource": "*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": "iam:CreateServiceLinkedRole",
-            "Resource": "*",
-            "Condition": {
-                "StringEquals": {
-                    "iam:AWSServiceName": [
-                        "autoscaling.amazonaws.com",
-                        "ec2scheduled.amazonaws.com",
-                        "elasticloadbalancing.amazonaws.com",
-                        "spot.amazonaws.com",
-                        "spotfleet.amazonaws.com",
-                        "transitgateway.amazonaws.com"
-                    ]
-                }
-            }
-        }
-    ]
-}
+  default     = []
 }
 
 data "aws_iam_policy_document" "sample" {
   statement {
     actions = [
       "s3:ListBuckets",
+      "ec2:*",
     ]
 
     resources = ["*"]
