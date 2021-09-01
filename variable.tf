@@ -3,7 +3,11 @@ variable "create_group" {
   type        = bool
   default     = true
 }
-
+variable "region" {
+  description = "Default region for AWS"
+  type        = string
+  default = "us-east-1"
+}
 variable "groupname" {
   description = "Name of IAM group"
   type        = string

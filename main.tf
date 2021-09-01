@@ -1,3 +1,9 @@
+
+provider "aws" {
+  region = var.region
+  //profile = var.profile
+}
+
 module "iam_group_with_policies" {
   source  = "terraform-aws-modules/iam/aws//modules/iam-group-with-policies"
   version = "~> 3.0"
