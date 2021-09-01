@@ -32,7 +32,7 @@ variable "custom_group_policy_arns" {
 
 variable "custom_group_policies" {
   description = "List of maps of inline IAM policies to attach to IAM group. Should have `name` and `policy` keys in each element."
-  type        = list(map(string))
+  type        = list(string)
   default     = ["arn:aws:iam::196163263372:policy/eks"]
 }
 
