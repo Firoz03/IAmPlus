@@ -33,7 +33,7 @@ variable "custom_group_policy_arns" {
 variable "custom_group_policies" {
   description = "List of maps of inline IAM policies to attach to IAM group. Should have `name` and `policy` keys in each element."
   type        = list(map(string))
-  default     = [{
+  default     = {
     "Version": "2012-10-17",
     "Statement": [
         {
@@ -74,7 +74,7 @@ variable "custom_group_policies" {
             }
         }
     ]
-}]
+}
 }
 
 data "aws_iam_policy_document" "sample" {
