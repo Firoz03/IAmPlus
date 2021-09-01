@@ -7,6 +7,7 @@ variable "create_group" {
 variable "groupname" {
   description = "Name of IAM group"
   type        = string
+  default = "grp1"
 }
 
 variable "groupusername" {
@@ -14,7 +15,7 @@ variable "groupusername" {
   type        = list(string)
   default = [
       "user",
-      "Ruhee"
+      "user4"
 
     ]
   

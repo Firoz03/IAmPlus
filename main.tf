@@ -12,7 +12,7 @@ module "iam_group_with_policies" {
 
   custom_group_policies = [
     {
-      name   = "AllowS3Listing"
+      //name   = "AllowS3Listing"
       policy = data.aws_iam_policy_document.sample.json
     }
   ]
