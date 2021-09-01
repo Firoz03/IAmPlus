@@ -30,19 +30,3 @@ variable "custom_group_policy_arns" {
   default     = ["arn:aws:iam::aws:policy/AdministratorAccess"]
 }
 
-variable "custom_group_policies" {
-  description = "List of maps of inline IAM policies to attach to IAM group. Should have `name` and `policy` keys in each element."
-  type        = list(map(string))
-  default     = []
-}
-
-data "aws_iam_policy_document" "sample" {
-  statement {
-    actions = [
-      "s3:ListBuckets",
-      "ec2:*",
-    ]
-
-    resources = ["*"]
-  }
-}

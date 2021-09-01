@@ -16,11 +16,4 @@ module "iam_group_with_policies" {
 
  custom_group_policy_arns = var.custom_group_policy_arns
 
-  custom_group_policies = [
-    {
-      name   = "AllowS3Listing and Ec2"
-      policy = data.aws_iam_policy_document.sample.json
-    }
-  ]
 }
-
