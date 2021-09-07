@@ -1,10 +1,46 @@
-kms_key_id = "arn:aws:kms:us-east-1:123456789101:key/cccc103b-4ba3-5993-6fc7-b7e538b25fd8"
-custom_endpoint_certificate_arn = "arn:aws:acm:us-east-1:123456789101:certificate/abcd1234-ef11-abcd-1234-abcd1234efef"
-#cloudwatch_log_group_arn = "arn:aws:logs:us-east-1:123456789101:log-group:/aws/elasticsearch/index_slow_logs:*"
+kms_key_id = ""
+custom_endpoint_certificate_arn = ""
 
-#warm count
+#warmtype detaisl
 warm_count = 3
-warm_enabled = false
+warm_enabled = true
 warm_type = "ultrawarm1.medium.elasticsearch"
 create_service_link_role = true 
 tls_security_policy = "Policy-Min-TLS-1-2-2019-07"
+tags={
+    Owner = "sysops"
+    env   = "test"
+  }
+
+#security group & subnets
+security_group_ids = ["sg-988168fc"]
+subnet_ids = ["subnet-6fbbb807","subnet-33a01a48"]
+
+#security
+# master_user_username = "masteruser"
+# master_user_password = "demopassword"
+
+# access_policies = <<EOF 
+# {
+#     "Version": "2012-10-17",
+#     "Statement": [{
+#         "Effect": "Allow",
+#         "Principal": {
+#         "AWS": [
+#             "arn:aws:iam::987654321098:user/test-user"
+#         ]
+#         },
+#         "Action": [
+#         "es:ESHttp*"
+#         ],
+#         "Condition": {
+#         "IpAddress": {
+#             "aws:SourceIp": [
+#             "192.0.2.0/24"
+#             ]
+#         }
+#         },
+#         "Resource": "arn:aws:es:us-west-1:987654321098:domain/iamplus-elasticsearch/*"
+#     }]
+# }
+# EOF

@@ -9,3 +9,7 @@ output "domain_id" {
 output "endpoint" {
   value = module.aws_es.endpoint
 }
+
+output "kibana_endpoint" {
+  value = module.aws_es.kibana_endpoint
+}
