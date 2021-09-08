@@ -6,7 +6,7 @@ variable "kms_key_id" {
 variable "subnet_ids" { }
 variable "vpc_security_group_ids" { }
 
-variable "performance_insights_kms_key_id" { }
+
 
 
 #tags
