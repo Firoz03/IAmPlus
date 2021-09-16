@@ -29,11 +29,6 @@ variable "instance_type" {
   type        = string
 }
 
-# variable "extra_security_groups" {
-#   description = "A list of extra security groups to associate with the elastic network interfaces to control who can communicate with the cluster."
-#   type        = list(string)
-#   default     = []
-# }
 
 variable "enhanced_monitoring" {
   description = "Specify the desired enhanced MSK CloudWatch monitoring level to one of three monitoring levels: DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER or PER_TOPIC_PER_PARTITION. See [Monitoring Amazon MSK with Amazon CloudWatch](https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html)."
@@ -48,11 +43,6 @@ variable "server_properties" {
   default     = {}
 }
 
-# variable "encryption_at_rest_kms_key_arn" {
-#   description = "You may specify a KMS key short ID or ARN (it will always output an ARN) to use for encrypting your data at rest. If no key is specified, an AWS managed KMS ('aws/msk' managed service) key will be used for encrypting the data at rest."
-#   type        = string
-#   default     = ""
-# }
 
 variable "encryption_in_transit_client_broker" {
   description = "Encryption setting for data in transit between clients and brokers. Valid values: TLS, TLS_PLAINTEXT, and PLAINTEXT. Default value is TLS_PLAINTEXT."
@@ -68,8 +58,3 @@ variable "tags" {
 }
 
 
-# variable "cloudwatch_logs_group" {
-#   description = "Name of the Cloudwatch Log Group to deliver logs to."
-#   type        = string
-#   default     = ""
-# }
